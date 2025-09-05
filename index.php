@@ -13,24 +13,23 @@
 
 <div class="task-list">
   <?php
-  // Run a query (fetch all todos)
   $sql = "SELECT id, details, complete FROM tasks";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-      echo "<ul>";
-      while($row = $result->fetch_assoc()) {
-          $status = $row["complete"] ? "✅" : "❌";
-          echo "<li>{$row['details']} $status</li>";
-      }
-      echo "</ul>";
+    echo "<ul>";
+    while($row = $result->fetch_assoc()) {
+      $status = $row["complete"] ? "✅" : "❌";
+      echo "<li>{$row['details']} $status</li>";
+    }
+    echo "</ul>";
   } else {
-      echo "No todos yet!";
+    echo "No todos yet!";
   }
-
-  $conn->close();
   ?>
 </div>
 
 </body>
 </html>
+
+<?php $conn->close(); ?>
