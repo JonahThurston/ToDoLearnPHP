@@ -37,3 +37,8 @@ document.querySelectorAll(".delete-btn").forEach((button) => {
       });
   });
 });
+
+document.getElementById("showTaskModal").addEventListener("click", () => {
+  const form = document.getElementById("new-task-modal");
+  form.style.display = form.style.display === "none" ? "block" : "none";
+});

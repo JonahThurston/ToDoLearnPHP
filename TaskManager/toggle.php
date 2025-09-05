@@ -16,4 +16,6 @@ if (isset($_POST['id'])) {
     echo $newStatus ? "✅" : "❌";
   }
 }
+
+$conn->close();
 ?>

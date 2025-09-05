@@ -33,6 +33,16 @@
   ?>
 </div>
 
+<div id="new-task-modal" style="display: none; background-color: aquamarine; max-width: 500px;">
+  <h2>Create a New Task</h2>
+  <form action="TaskManager/create.php" method="POST">
+    <input type="text" name="details" placeholder="Task details" required>
+    <button type="submit">Add Task</button>
+  </form>
+</div>
+
+<button id="showTaskModal">Create Task</button>
+
 <script src="main.js"></script>
 </body>
 </html>

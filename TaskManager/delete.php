@@ -12,4 +12,6 @@ if (isset($_POST['id'])) {
     echo 'error';
   }
 }
+
+$conn->close();
 ?>
