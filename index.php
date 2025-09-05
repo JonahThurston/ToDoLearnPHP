@@ -1,4 +1,4 @@
-<?php require 'db.php'?>
+<?php require 'db-connect.php'?>
 
 <!DOCTYPE html>
 <html>
@@ -20,15 +20,20 @@
     echo "<ul>";
     while($row = $result->fetch_assoc()) {
       $status = $row["complete"] ? "✅" : "❌";
-      echo "<li>{$row['details']} $status</li>";
+      echo "<li>
+        {$row['details']} <span class='status'>$status</span>
+        <button class='toggle-btn' data-id='{$row['id']}'>Toggle Completion</button>
+        <button class='delete-btn' data-id='{$row['id']}'>Delete Task</button>
+        </li>";
     }
     echo "</ul>";
   } else {
-    echo "No todos yet!";
+    echo "No tasks yet!";
   }
   ?>
 </div>
 
+<script src="main.js"></script>
 </body>
 </html>
 

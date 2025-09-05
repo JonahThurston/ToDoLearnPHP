@@ -33,7 +33,7 @@ if ($conn->query("CREATE TABLE IF NOT EXISTS tasks (
   complete BOOLEAN NOT NULL DEFAULT FALSE
 )") === TRUE) {
   //TODO: this isn't perfect. It logs this whether we really need to or not. Meh.
-  echo "<script>console.log('tasks table found successfully.');</script>";
+  //echo "<script>console.log('tasks table found successfully.');</script>";
 } else {
   echo "Error creating task table: " . $conn->error;
 }
