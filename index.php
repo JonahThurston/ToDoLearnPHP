@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<h1 class="title">TODO!!!</h1>
 <?php
 // Database connection settings
 $servername = "localhost";
@@ -17,8 +25,6 @@ if ($conn->connect_error) {
 $sql = "SELECT ID, Description, complete FROM tasks";
 $result = $conn->query($sql);
 
-echo "<h1>My Todo List</h1>";
-
 if ($result->num_rows > 0) {
     echo "<ul>";
     while($row = $result->fetch_assoc()) {
@@ -32,3 +38,6 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+
+</body>
+</html>
