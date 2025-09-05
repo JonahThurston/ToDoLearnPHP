@@ -1,0 +1,12 @@
+{
+    "name": "owner/to-do-learn-php",
+    "authors": [
+        {
+            "name": "JonahThurston",
+            "email": "jonah.m.thurston@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

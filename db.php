@@ -1,7 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";     // default user in XAMPP
-$password = "";         // default password is empty
+require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$servername = $_ENV['DB_HOST'];
+$username   = $_ENV['DB_USER'];
+$password   = $_ENV['DB_PASS'];
 $dbname = "todo";
 
 $conn = new mysqli($servername, $username, $password);
@@ -27,7 +32,8 @@ if ($conn->query("CREATE TABLE IF NOT EXISTS tasks (
   details VARCHAR(255),
   complete BOOLEAN NOT NULL DEFAULT FALSE
 )") === TRUE) {
-  echo "<script>console.log('tasks table created successfully.');</script>";
+  //TODO: this isn't perfect. It logs this whether we really need to or not. Meh.
+  echo "<script>console.log('tasks table found successfully.');</script>";
 } else {
   echo "Error creating task table: " . $conn->error;
 }
