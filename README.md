@@ -1,4 +1,4 @@
-I made this app because I got a job interview with a company that uses the Lamp stack.
+I made this app because I got a job interview with a company that uses the Lamp stack. So I gotta learn PHP asap.
 
 This was made using XAMPP as a starting spot. Put this in the htdocs file of that and it should work.
 
